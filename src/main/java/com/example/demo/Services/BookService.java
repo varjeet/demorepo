@@ -38,8 +38,8 @@ public class BookService {
     public void deleteBook(int id)
     {
         Book singleBook;
-        // Using stream that comes in java 8 to get matching ID
-        list=list.stream().filter(book->book.getId()!=id).collect(Collectors.toList());
+        //    Using stream that comes in java 8 to get matching ID
+        list = list.stream().filter(book->book.getId()!=id).collect(Collectors.toList());
 
     }
 

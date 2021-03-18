@@ -22,7 +22,7 @@ public class DemoApplication {
 	   // to save single object//User resultuser = userRepo.save(user);
 		User user2=new User();
 		user2.setStatus("Manager");
-		user2.setName("Arsh");
+		user2.setName("Arshdeep");
 		List<User> users = List.of(user1,user2);
 
          Iterable<User> result=userRepo.saveAll(users);
