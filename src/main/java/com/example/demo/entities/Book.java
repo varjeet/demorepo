@@ -1,10 +1,12 @@
 package com.example.demo.entities;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.annotation.processing.Generated;
 import javax.persistence.*;
 
-@Entity
-@Table(name="books")
+
+@Document(collection="Book")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

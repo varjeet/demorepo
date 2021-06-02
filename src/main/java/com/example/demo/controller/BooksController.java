@@ -28,11 +28,12 @@ public class BooksController {
     }
 
       // Adding book
+
     @PostMapping("/books")
-    public Book addBook(@RequestBody Book book){ //what requestbody do: Whole data we are getting from frontend/postman for book will be in request body
-              this.bookService.addBook(book);
-              return book;
-       }
+    public String addAllBooks(@RequestBody(required = false) Iterable<Book> book1,@RequestBody Book book2){ //what requestbody do: Whole data we are getting from frontend/postman for book will be in request body
+        this.bookService.addAllBooks(book1);
+        return "Inserted";
+    }
 
        //Deleting book
     @DeleteMapping("/books/{id}")
@@ -42,10 +43,32 @@ public class BooksController {
 
     }
     //Updating book
-    @PutMapping("/books/{id}")
-    public Book updateBook(@RequestBody Book book, @PathVariable("id") int id)
+    public Book updateBook(@RequestBody Book book, @RequestParam("id") int id)
     {
         this.bookService.updateBook(book,id);
         return book;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
